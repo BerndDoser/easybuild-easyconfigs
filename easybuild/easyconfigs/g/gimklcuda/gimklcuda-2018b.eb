@@ -1,0 +1,25 @@
+easyblock = "Toolchain"
+
+name = 'gimklcuda'
+version = '2018b'
+
+homepage = '(none)'
+description = """GNU Compiler Collection (GCC) based compiler toolchain with Intel MPI and MKL"""
+
+toolchain = SYSTEM
+
+local_comp = ('GCC', '7.3.0-2.30')
+local_intel_version = '2018.3.222'
+local_blaslib = 'imkl'
+local_blas = '-%s-%s' % (local_blaslib, local_intel_version)
+
+dependencies = [
+    local_comp,
+    ('CUDA', '9.2.88', '', local_comp),
+    ('impi', local_intel_version, '', local_comp),
+    ('imkl', local_intel_version, '', ('gimpi', version)),
+    ('FFTW', '3.3.8', '', ('gimkl', version)),
+#    ('ScaLAPACK', '2.0.2', local_blas, ('gimpi', version)),
+]
+
+moduleclass = 'toolchain'

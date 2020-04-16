@@ -48,13 +48,13 @@ exts_default_options = {
 # order is important!
 # package versions updated Sept 13th 2019
 exts_list = [
-    ('pip', '19.2.3', {
-        'use_pip': False,
-        'checksums': ['e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135'],
-    }),
     ('setuptools', '41.2.0', {
         'source_tmpl': '%(name)s-%(version)s.zip',
         'checksums': ['66b86bbae7cc7ac2e867f52dc08a6bd064d938bac59dfec71b9b565dd36d6012'],
+    }),
+    ('pip', '19.2.3', {
+        'use_pip': False,
+        'checksums': ['e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135'],
     }),
     ('wheel', '0.33.6', {
         'checksums': ['10c9da68765315ed98850f8e048347c3eb06dd81822dc2ab1d4fde9dc9702646'],

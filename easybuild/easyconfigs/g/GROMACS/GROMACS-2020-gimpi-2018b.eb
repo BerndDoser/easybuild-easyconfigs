@@ -10,10 +10,7 @@
 # * Kenneth Hoste <kenneth.hoste@ugent.be>
 # * Adam Huffman <adam.huffman@crick.ac.uk>
 # License::   MIT/GPL
-# 2019.3 version
-# Contribution from the Crick HPC team
-# uploaded by J. Sassmannshausen
-#
+##
 
 name = 'GROMACS'
 version = '2020'
@@ -26,7 +23,7 @@ GROMACS is a versatile package to perform molecular dynamics,
 This is a CPU only build, containing both MPI and threadMPI builds.
 """
 
-toolchain = {'name': 'foss', 'version': '2019b'}
+toolchain = {'name': 'gimpi', 'version': '2018b'}
 toolchainopts = {'openmp': True, 'usempi': True}
 
 source_urls = [
@@ -46,9 +43,15 @@ checksums = [
     '727cc1afd9061002390e474b01aeb40efd984e6b7febd1cfe5e69a0a82b21f06',
 ]
 
+local_blaslib = 'OpenBLAS'
+local_blasver = '0.3.7'
+local_blas = '%s-%s' % (local_blaslib, local_blasver)
+
 builddependencies = [
-    ('CMake', '3.15.3'),
-    ('Python', '3.7.4'),
+    ('CMake', '3.15.3', '', ('GCCcore', '8.3.0')),
+    ('Python', '3.7.4', '', ('GCCcore', '8.3.0')),
+    ('OpenBLAS', '0.3.7', '', ('GCC', '8.3.0')),
+    ('ScaLAPACK', '2.0.2', '-%s' % local_blas),
 ]
 
 moduleclass = 'bio'

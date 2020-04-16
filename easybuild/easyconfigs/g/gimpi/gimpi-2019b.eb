@@ -1,0 +1,22 @@
+easyblock = "Toolchain"
+
+name = 'gimpi'
+version = '2019b'
+
+homepage = '(none)'
+description = """GNU Compiler Collection (GCC) based compiler toolchain with Intel MPI."""
+
+toolchain = SYSTEM
+
+local_comp = ('GCC', '8.3.0')
+
+dependencies = [
+    local_comp,
+    #('impi', '2019.1.144', '', local_comp),
+    ('impi', '2018.3.222', '', ('GCC', '7.3.0-2.30')),
+    ('OpenBLAS', '0.3.7', '', local_comp),
+    ('FFTW', '3.3.7', '', ('gimpi', '2018a')),
+    ('ScaLAPACK', '2.0.2', '', ('gimpi', '2018b-OpenBLAS-0.3.7')),
+]
+
+moduleclass = 'toolchain'

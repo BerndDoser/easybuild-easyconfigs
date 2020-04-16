@@ -10,36 +10,32 @@
 # * Kenneth Hoste <kenneth.hoste@ugent.be>
 # * Adam Huffman <adam.huffman@crick.ac.uk>
 # License::   MIT/GPL
-# 2019.3 version
-# Contribution from the Crick HPC team
-# uploaded by J. Sassmannshausen
-#
+##
 
 name = 'GROMACS'
-version = '2020'
+version = '2019.4-RAMD-1.0'
 
 homepage = 'http://www.gromacs.org'
 description = """
 GROMACS is a versatile package to perform molecular dynamics,
  i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
 
-This is a CPU only build, containing both MPI and threadMPI builds.
+This is a GPU enabled build, containing both MPI and threadMPI binaries.
 """
 
-toolchain = {'name': 'foss', 'version': '2019b'}
+toolchain = {'name': 'fosscuda', 'version': '2018b'}
 toolchainopts = {'openmp': True, 'usempi': True}
 
 source_urls = [
-    'https://ftp.gromacs.org/pub/gromacs/',
-    'ftp://ftp.gromacs.org/pub/gromacs/',
+    'https://github.com/HITS-MCM/gromacs-ramd/archive/'
 ]
-sources = [SOURCELOWER_TAR_GZ]
+sources = ['gromacs-2019.4-ramd-1.0.tar.gz']
 patches = [
     'GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch',
     'GROMACS-2018_dont_do_gpu_tests_on_cpu_build.patch',
 ]
 checksums = [
-    '477e56142b3dcd9cb61b8f67b24a55760b04d1655e8684f979a75a5eec40ba01',  # gromacs-2020.tar.gz
+    '190dfdaab9f4dbbfa57d3787e42789fe618537852ca1f2c418c0f4b6cfa10f08',  # gromacs-2019.4-ramd-1.0.tar.gz
     # GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch
     '406f5edd204be812f095a6f07ebc2673c5f6ddf1b1c1428fd336a80b9c629275',
     # GROMACS-2018_dont_do_gpu_tests_on_cpu_build.patch
@@ -47,8 +43,8 @@ checksums = [
 ]
 
 builddependencies = [
-    ('CMake', '3.15.3'),
-    ('Python', '3.7.4'),
+    ('CMake', '3.12.1'),
+    ('Python', '3.6.6'),
 ]
 
 moduleclass = 'bio'

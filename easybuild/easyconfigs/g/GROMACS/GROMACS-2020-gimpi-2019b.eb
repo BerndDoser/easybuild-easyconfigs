@@ -10,10 +10,7 @@
 # * Kenneth Hoste <kenneth.hoste@ugent.be>
 # * Adam Huffman <adam.huffman@crick.ac.uk>
 # License::   MIT/GPL
-# 2019.3 version
-# Contribution from the Crick HPC team
-# uploaded by J. Sassmannshausen
-#
+##
 
 name = 'GROMACS'
 version = '2020'
@@ -26,7 +23,7 @@ GROMACS is a versatile package to perform molecular dynamics,
 This is a CPU only build, containing both MPI and threadMPI builds.
 """
 
-toolchain = {'name': 'foss', 'version': '2019b'}
+toolchain = {'name': 'gimpi', 'version': '2019b'}
 toolchainopts = {'openmp': True, 'usempi': True}
 
 source_urls = [
@@ -47,8 +44,8 @@ checksums = [
 ]
 
 builddependencies = [
-    ('CMake', '3.15.3'),
-    ('Python', '3.7.4'),
+    ('CMake', '3.15.3', '', ('GCCcore', '8.3.0')),
+    ('Python', '3.7.4', '', ('GCCcore', '8.3.0')),
 ]
 
 moduleclass = 'bio'
