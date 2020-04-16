@@ -48,4 +48,8 @@ builddependencies = [
     ('Python', '3.6.6'),
 ]
 
+dependencies = [
+    ('FFTW', '3.3.8'),
+]
+
 moduleclass = 'bio'
