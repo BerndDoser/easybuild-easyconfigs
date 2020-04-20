@@ -1,0 +1,21 @@
+easyblock = "Toolchain"
+
+name = 'gimpic'
+version = '2019b'
+
+homepage = '(none)'
+description = """GNU Compiler Collection (GCC) based compiler toolchain along with CUDA toolkit,
+ including IntelMPI for MPI support with CUDA features enabled."""
+
+toolchain = SYSTEM
+
+local_comp = ('GCC', '8.3.0')
+
+# compiler toolchain dependencies
+dependencies = [
+    local_comp,  # part of gcccuda
+    ('CUDA', '10.1.243', '', local_comp),  # part of gcccuda
+    ('impi', '2018.3.222', '', ('gcccuda', version)),
+]
+
+moduleclass = 'toolchain'
