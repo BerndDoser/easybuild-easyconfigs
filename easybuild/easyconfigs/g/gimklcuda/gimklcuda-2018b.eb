@@ -19,7 +19,6 @@ dependencies = [
     ('impi', local_intel_version, '', local_comp),
     ('imkl', local_intel_version, '', ('gimpi', version)),
     ('FFTW', '3.3.8', '', ('gimkl', version)),
-#    ('ScaLAPACK', '2.0.2', local_blas, ('gimpi', version)),
 ]
 
 moduleclass = 'toolchain'
