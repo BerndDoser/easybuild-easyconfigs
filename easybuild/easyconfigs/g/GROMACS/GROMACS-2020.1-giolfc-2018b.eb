@@ -44,8 +44,7 @@ checksums = [
 ]
 
 builddependencies = [
-    ('CMake', '3.11.4', '', ('GCCcore', '7.3.0')),
-    ('Python', '3.6.6', '', ('GCCcore', '7.3.0')),
+    ('CMake', '3.11.4'),
 ]
 
 moduleclass = 'bio'
