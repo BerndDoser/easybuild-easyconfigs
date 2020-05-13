@@ -36,7 +36,7 @@ patches = [
     'GROMACS-2018_dont_do_gpu_tests_on_cpu_build.patch',
 ]
 checksums = [
-    '7465e4cd616359d84489d919ec9e4b1aaf51f0a4296e693c249e83411b7bd2f3',  # gromacs-2020.1.tar.gz
+    '7465e4cd616359d84489d919ec9e4b1aaf51f0a4296e693c249e83411b7bd2f3',  # gromacs-2020.2.tar.gz
     # GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch
     '406f5edd204be812f095a6f07ebc2673c5f6ddf1b1c1428fd336a80b9c629275',
     # GROMACS-2018_dont_do_gpu_tests_on_cpu_build.patch
