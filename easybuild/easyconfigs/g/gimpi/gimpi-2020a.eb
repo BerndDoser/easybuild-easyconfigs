@@ -1,0 +1,18 @@
+easyblock = "Toolchain"
+
+name = 'gimpi'
+version = '2020a'
+
+homepage = '(none)'
+description = """GNU Compiler Collection (GCC) based compiler toolchain with Intel MPI."""
+
+toolchain = SYSTEM
+
+local_comp = ('GCC', '9.3.0')
+
+dependencies = [
+    local_comp,
+    ('impi', '2019.7.217', '', local_comp),
+]
+
+moduleclass = 'toolchain'
