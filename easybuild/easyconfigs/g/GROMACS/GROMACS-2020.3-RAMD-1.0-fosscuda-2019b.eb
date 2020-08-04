@@ -35,7 +35,8 @@ patches = [
     'GROMACS-2019_increase_test_timeout_for_GPU.patch',
 ]
 checksums = [
-    '2a78ef4c59a4f0d1bea955ba9a839a497db3e47682c8539ff7ccdc74cdd89159', #  gromacs-2020.3-ramd-1.0.tar.gz
+    # gromacs-2020.3-ramd-1.0.tar.gz
+    '2a78ef4c59a4f0d1bea955ba9a839a497db3e47682c8539ff7ccdc74cdd89159',
     # GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch
     '406f5edd204be812f095a6f07ebc2673c5f6ddf1b1c1428fd336a80b9c629275',
     # GROMACS-2019_increase_test_timeout_for_GPU.patch

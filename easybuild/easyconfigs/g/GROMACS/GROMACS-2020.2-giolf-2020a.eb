@@ -45,7 +45,7 @@ checksums = [
 
 builddependencies = [
     ('CMake', '3.16.4', '', ('GCCcore', '9.3.0')),
-#    ('Python', '3.8.2', '', ('GCCcore', '9.3.0')),
+    # ('Python', '3.8.2', '', ('GCCcore', '9.3.0')),
 ]
 
 # https://software.intel.com/en-us/forums/intel-clusters-and-hpc-technology/topic/799716

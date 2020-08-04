@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 # to enable SLURM integration (site-specific)
-#configopts = '--with-slurm --with-pmi --without-verbs'
+# configopts = '--with-slurm --with-pmi --without-verbs'
 configopts = '--without-verbs'
 
 moduleclass = 'mpi'
