@@ -35,7 +35,7 @@ builddependencies = [
 osdependencies = [('libibverbs-dev', 'libibverbs-devel', 'rdma-core-devel')]
 
 dependencies = [
-    ('numactl', '2.0.13'),
+    ('numactl', '2.0.12'),
 ]
 
 preconfigopts = 'autoreconf && '
