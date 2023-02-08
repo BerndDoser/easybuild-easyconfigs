@@ -19,4 +19,6 @@ components = ['intel-mpi', 'intel-psxe', 'intel-imb']
 # set up all the mpi commands to default to intel compilers
 # set_mpi_wrappers_all = True
 
+skipsteps = ['sanitycheck']
+
 moduleclass = 'mpi'

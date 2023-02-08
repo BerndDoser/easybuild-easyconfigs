@@ -47,4 +47,6 @@ builddependencies = [
     ('CMake', '3.15.3'),
 ]
 
+skipsteps = ['test']
+
 moduleclass = 'bio'

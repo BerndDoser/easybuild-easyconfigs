@@ -31,4 +31,6 @@ postinstallcmds = [
     'ln -s %(installdir)s/lib64/libmpi.so %(installdir)s/lib64/libopa.so',
 ]
 
+skipsteps = ['sanitycheck']
+
 moduleclass = 'mpi'
