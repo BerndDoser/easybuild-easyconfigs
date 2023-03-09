@@ -15,7 +15,7 @@ toolchain = {'name': 'foss', 'version': '2022a'}
 
 source_urls = ['https://github.com/HITS-MBM/ColBreaker/archive/']
 sources = ['ColBreaker-%(version)s.tar.gz']
-checksums = ['586d28eebe9fbea391ad2bc5c8235416fe883bf535ffcab26ecce927a0ce0c60']
+checksums = ['a35f693ae8b873a9d043eaae627aac936ff746a146fc7f3e8cc04120aedde5b3']
 
 builddependencies = [
     ('CMake', '3.24.3'),
