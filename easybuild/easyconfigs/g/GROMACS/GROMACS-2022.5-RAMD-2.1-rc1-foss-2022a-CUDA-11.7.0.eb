@@ -1,0 +1,63 @@
+# This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild
+#
+# Copyright:: Copyright 2012-2016 University of Luxembourg / LCSB, Cyprus Institute / CaSToRC,
+#                                 Ghent University / The Francis Crick Institute
+# Authors::
+# * Wiktor Jurkowski <wiktor.jurkowski@gmail.com>
+# * Fotis Georgatos <fotis@cern.ch>
+# * George Tsouloupas <g.tsouloupas@cyi.ac.cy>
+# * Kenneth Hoste <kenneth.hoste@ugent.be>
+# * Adam Huffman <adam.huffman@crick.ac.uk>
+# * Ake Sandgren <ake.sandgren@hpc2n.umu.se>
+# * J. Sassmannshausen <Crick HPC team>
+# * Dugan Witherick <dugan.witherick@warwick.ac.uk>
+# * Christoph Siegert <christoph.siegert@uni-leipzig.de>
+# License::   MIT/GPL
+
+name = 'GROMACS'
+version = '2022.5-RAMD-2.1-rc1'
+versionsuffix = '-CUDA-%(cudaver)s'
+
+homepage = 'https://www.gromacs.org'
+description = """
+GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
+Newtonian equations of motion for systems with hundreds to millions of
+particles.
+
+This is a GPU enabled build, containing both MPI and threadMPI builds.
+
+It also contains the gmxapi extension for the single precision MPI build.
+"""
+
+toolchain = {'name': 'foss', 'version': '2022a'}
+toolchainopts = {'openmp': True, 'usempi': True}
+
+source_urls = [
+    'https://github.com/HITS-MCM/gromacs-ramd/archive/'
+]
+sources = ['gromacs-2022.5-ramd-2.1-rc1.tar.gz']
+patches = [
+    'GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch',
+    'GROMACS-2019_increase_test_timeout_for_GPU.patch',
+]
+checksums = [
+    # gromacs-2022.5-ramd-2.1-rc1.tar.gz
+    '7f40b23d02f1fb24bcc66abd36d607dca49f0619667773bfff6b8411510b1841',
+    # GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch
+    '406f5edd204be812f095a6f07ebc2673c5f6ddf1b1c1428fd336a80b9c629275',
+    # GROMACS-2019_increase_test_timeout_for_GPU.patch
+    '0d16f53d428155197a0ed0b0974ce03422f199d7c463c4a9156a3b99e3c86234',
+]
+
+builddependencies = [
+    ('CMake', '3.24.3'),
+]
+
+skipsteps = ['test']
+
+dependencies = [
+    ('CUDA', '11.7.0', '', SYSTEM),
+    ('UCX-CUDA', '1.13.1', versionsuffix),
+]
+
+moduleclass = 'bio'
