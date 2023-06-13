@@ -1,0 +1,32 @@
+# Author: Bernd Doser <bernd.doser@h-its.org>
+
+easyblock = 'CMakeMake'
+
+name = 'ColBreaker'
+version = '0.7'
+
+homepage = 'https://github.com/HITS-MBM/ColBreaker'
+
+description = """
+  Coarse grained collagen model described by worm-like chains
+"""
+
+toolchain = {'name': 'foss', 'version': '2021b'}
+
+source_urls = ['https://github.com/HITS-MBM/ColBreaker/archive/']
+sources = ['ColBreaker-%(version)s.tar.gz']
+checksums = ['3e5f8035de6df77e971a49272066770b8af3f622ec07526a5bbbdb06f26ff919']
+
+builddependencies = [
+    ('CMake', '3.26.3'),
+    ('conan', '2.0.4'),
+]
+
+configopts = "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=conan_provider.cmake"
+
+separate_build_dir = True
+
+sanity_check_paths = {
+    'files': ['bin/ColBreaker'],
+    'dirs': []
+}
