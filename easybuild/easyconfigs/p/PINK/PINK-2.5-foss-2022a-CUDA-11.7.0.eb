@@ -1,0 +1,36 @@
+# Author: Bernd Doser <bernd.doser@h-its.org>
+
+easyblock = 'CMakeMake'
+
+name = 'PINK'
+version = '2.5'
+versionsuffix = '-CUDA-%(cudaver)s'
+
+homepage = 'https://github.com/HITS-AIN/PINK'
+
+description = """
+  Parallelized rotation and flipping INvariant Kohonen maps
+"""
+
+toolchain = {'name': 'foss', 'version': '2022a'}
+
+source_urls = ['https://github.com/HITS-AIN/PINK/archive/']
+sources = ['%(version)s.tar.gz']
+checksums = ['11da699bd1b4b81f45068a1a09d26bd20b351305caa9c22aa8e29eb97f2df313']
+
+builddependencies = [
+    ('CMake', '3.24.3'),
+]
+
+dependencies = [
+    ('CUDA', '11.7.0', '', SYSTEM),
+    ('UCX-CUDA', '1.13.1', versionsuffix),
+]
+
+separate_build_dir = True
+
+sanity_check_paths = {
+    'files': ['bin/Pink'],
+    'dirs': []
+}
+
