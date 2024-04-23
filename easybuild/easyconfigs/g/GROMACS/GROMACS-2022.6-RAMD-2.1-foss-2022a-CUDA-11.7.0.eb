@@ -42,7 +42,7 @@ patches = [
 ]
 checksums = [
     # gromacs-2022.6-ramd-2.1-rc2.tar.gz
-    '2bddcd037cc0dcf0d1e519543fd26ca18c2a14d93c9eec6d73d267c8825c8442',
+    '2f5ff87317ecf7ad4b6cb89616de9beb8a4b79baa5e4c46e6ac8efff9527d717',
     # GROMACS-2019_fix_omp_num_threads_and_google_test_death_style_in_tests.patch
     '406f5edd204be812f095a6f07ebc2673c5f6ddf1b1c1428fd336a80b9c629275',
     # GROMACS-2019_increase_test_timeout_for_GPU.patch
